@@ -202,7 +202,7 @@
 				$("#students").find("tbody").append("<tr data-student='" + students[i].id +"'> <td class='fName'> " + students[i].firstName + " </td> <td class='lName'> " + students[i].lastName + " </td> <td class='age'> " + students[i].age + " </td> <td class='email'> " + students[i].email + " </td> <td class='phoneNumber'> " + students[i].phoneNumber + " </td><td><button class='edit btn btn-info' data-student='" + students[i].id +"'>edit</button><button class='delete btn btn-info' delete-student='" + students[i].id +"'>delete</button> </td> </tr>");
 			}
 				
-							
+				//this is the add button.			
 					$("#btnAdd").click(function() {		
 							
 							var isInValid = validateInputFields();
