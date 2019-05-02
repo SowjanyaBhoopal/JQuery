@@ -1,0 +1,294 @@
+<!doctype html>
+<html>
+<head>
+	<title>Contact Page</title>
+		
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		
+		
+		<style>
+		
+				
+			.firstcontent {
+				background-color:#683AB7;
+				font-size:15px;	
+				padding-bottom:12px;
+				
+			}
+			.nav-item a:hover {
+					color:blue;
+			}
+			
+				
+			.secondcontent	{
+					background-color:#8FEF8E;
+					padding:70px;
+					width:100%;
+				
+			}
+			.form-contact {
+							width:70%;
+							margin:auto;
+							
+			}
+			
+			.blockquote-footer {
+								margin-top:1em;
+								background-color:#6A3BBB;
+								color:white;
+			}
+			
+			.hide-validation {
+								visibility:hidden;
+								}
+			 
+</style>
+
+</head>
+
+
+<body>
+<nav class="navbar navbar-expand-lg firstcontent">
+		
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+	
+		  <ul class="navbar-nav" >
+		  <li class="nav-item active">
+			<a class="nav-link text-white tooltiptext" href="MyWebPage.html">Home </a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white tooltiptext" href="#">Contact Us</a>
+		  </li>
+		  <li class="nav-item">
+			<a class="nav-link text-white tooltiptext" href="enroll_students.list.html">Enroll Students</a>
+		  </li>
+  </div>
+</nav>
+
+<div class="jumbotron jumbotron-fluid secondcontent">
+		  <div class="container">
+			
+			<h3 class="text-center">Contact Us</h3>
+				<div class="article-text text-center"> Contact us about anything related to our service.</div>
+					
+		  </div>
+		</div>
+
+	 
+	 
+		<form class="form-contact"> 
+			
+			  <div class="row">
+				<div class="col-6">
+				<lable>First Name </lable>
+				  <input id="firstName" class="form-control" placeholder="First name" autocomplete="off">
+				  <p id="FirstNameRequired" class="hide-validation text-danger">First Name Required</p>
+				</div>
+				<div class="col-6">
+				<lable>Last Name </lable>
+				  <input id="lastname" class="form-control" placeholder="Last name"  autocomplete="off">
+				  <p  id="SecondNameRequired" class="hide-validation text-danger">Last Name Required</p>
+				</div>
+			  </div>
+		
+						
+				   
+			<div class="form-row my-2">
+				<div class="form-group col-md-6">
+				<label for="inputEmail4">Email</label>
+				<input type="email" class="form-control"  placeholder="Email">
+				<p id="inputEmail4" class="hide-validation text-danger">email required </p>
+				</div>
+			</div> 
+			
+			<div class="form-row">
+				<div class="form-group col-4"> 
+				<label for="phone">Enter your phone number:</label>
+				<input type="tel" class="form-control" placeholder="+1 800-000-0000" id="phone"> 
+				<p id="requiredNumber" class="hide-validation text-danger">Ph-number required </p>
+			
+				</div>
+				
+				<div class="form-group col-4">
+				  <label class="mx-1 " for="inlineFormCustomSelectPref">Phone Type</label>
+				  <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+					<option selected>Choose</option>
+					<option value="1">Home</option>
+					<option value="2">Cell</option>
+					<option value="3">Work</option>
+				  </select>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<label for="exampleFormControlTextarea1">Subject</label>
+				<textarea class="form-control col-md-5" id="exampleFormControlTextarea1" rows="3"></textarea>
+				<p id="requiredSubject" class="hide-validation text-danger">Subject required </p>
+			 </div>
+			
+			   <div class="form-group">
+				<label for="exampleFormControlTextarea1">Message</label>
+				<textarea class="form-control col-md-8" id="exampleFormControlTextarea2" rows="4"></textarea>
+				<p id="requiredMessage" class="hide-validation text-danger">Message required </p>
+			 </div>
+			  <button class="btn btn-primary" id="btnsubmit" type="button">Submit</button>
+</form>
+    
+			<div class="blockquote-footer">
+				<span class="footerA">Copyright@2019-Sowjanya</span>
+				<span class="footerB float-sm-right">youremail@address.com</span>
+			</div>
+	
+
+	<script>
+			var inputFields = document.getElementsByClassName("form-control");
+			
+			document.getElementById("btnsubmit").addEventListener("click", checkValidation);
+			
+			function checkValidation(inputValue) {
+			
+					var firstNameInput=inputFields[0];
+					inputValidation(firstNameInput);
+					
+					var lastNameInput=inputFields[1];
+					inputValidation(lastNameInput);
+					
+					var emailInput=inputFields[2];
+					inputValidation(emailInput);
+					
+					var numberInput=inputFields[3];
+					inputValidation(numberInput);
+					
+					var subjectInput=inputFields[4];
+					inputValidation(subjectInput);
+				
+					var messageInput=inputFields[5];
+					inputValidation(messageInput);
+					};
+			
+			
+			
+				function inputValidation(input) {
+				
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined && inputValue > 3){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};
+									
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined && inputValue > 3){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};
+									
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};
+									
+												
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined  ){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};
+																	
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined && inputValue >=3 ){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};	
+									
+						var inputValue=input.value;
+						if (inputValue !="" && inputValue != undefined ){
+								input.nextElementSibling.classList.add("hide-validation");
+								return true;
+						}
+							else {
+									input.nextElementSibling.classList.remove("hide-validation");
+									};
+									
+									
+								};
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						/*if (inputFields[0] != null && inputFields[0] != undefined && inputFields[0].length >3 && inputFields[0]!=""){
+						 document.getElementById("firstNameRequired").classList.add("hide-validation");
+						}
+						else {
+								inputFields[0].nextElementSibling.classList.remove("hide-validation");
+						}
+					
+						if (inputFields[1].value != undefined && inputFields [1].value.length > 3 && inputFields [1].value !=""){
+							inputFields[1].nextElementSibling.classList.add("hide-validation");}
+						
+						else {
+							inputFields[1].nextElementSibling.classList.remove("hide-validation");
+						}
+						
+						if (inputFields[2] .value == undefined || inputFields[2] .value.minlength > 3  || inputFields [2] .value ==""){
+						document.getElementById("inputEmail4").classList.remove("hide-validation");
+						}	
+						else {
+								inputFields[2].NextElementSibling.classList.add("hide-validation");
+						}
+						
+						var phoneElm = inputFields[3].value;
+							
+						if (phoneElm !=undefined && phoneElm != "" && phoneElm.minlength >= 10 && phoneElm.maxlenght < 12 ){
+						document.getElementById("phone").style.display = "inline-block";
+						}
+									
+						else {
+								inputFields[3].nextElementSibling.style.display = "none";
+						}			
+					
+					};
+						*/
+				
+				
+	
+	
+	
+	
+	
+	
+	
+	</script>
+		
+	
+	
+
+</body>
+
+</html>
